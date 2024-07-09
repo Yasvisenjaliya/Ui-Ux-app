@@ -12,4 +12,4 @@ const Button = ({ children, onClick, active }) => {
   );
 };
 
-export default Button; // Make sure to export Button as default
+export default Button; 

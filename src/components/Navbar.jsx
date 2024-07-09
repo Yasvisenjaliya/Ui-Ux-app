@@ -1,13 +1,12 @@
 // Navbar.jsx
 import React, { useState } from 'react';
-import Button from './Button'; // Adjust the import path as per your project structure
-
+import Button from './Button'; 
 import YourDetailsCard from './YourDetailsCard';
 import FatherDetailsCard from './FatherDetailsCard';
 import EducationDetailsCard from './EducationDetailsCard';
 
 const Navbar = ({ activeSection, onClose }) => {
-  const [activeTab, setActiveTab] = useState('yourDetails'); // Set 'yourDetails' as the default active tab
+  const [activeTab, setActiveTab] = useState('yourDetails'); 
 
   const handleTabClick = (tabName) => {
     setActiveTab(tabName === activeTab ? null : tabName);

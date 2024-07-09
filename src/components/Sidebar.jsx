@@ -8,11 +8,11 @@ const Sidebar = ({ setActiveCard, handleSidebarItemClick, darkMode, toggleDarkMo
 
   const handleSectionChange = (section) => {
     setActiveSection(section);
-    handleSidebarItemClick(section); // Notify parent component about section change
+    handleSidebarItemClick(section); 
   };
 
   const handleClick = (e, section) => {
-    e.preventDefault(); // Prevent default behavior such as scrolling
+    e.preventDefault(); 
     handleSectionChange(section);
   };
 

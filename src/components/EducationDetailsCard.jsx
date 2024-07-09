@@ -41,11 +41,11 @@ const EducationDetailsCard = () => {
   };
 
   const handleSubmit = () => {
-    setShowConfirmation(true); // Show confirmation dialog on submit
+    setShowConfirmation(true); 
   };
 
   const handleConfirmSubmission = () => {
-    setShowConfirmation(false); // Close confirmation dialog on confirm
+    setShowConfirmation(false); 
     console.log(`Submitted: Education Level - ${educationLevel}, School Name - ${schoolName}`);
   };
 

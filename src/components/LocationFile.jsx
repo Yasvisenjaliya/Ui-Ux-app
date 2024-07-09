@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Switch from 'react-switch';
-import { MdLocationOn, MdSearch } from 'react-icons/md'; // Import location and search icons
-import Table from './Table'; // Import the Table component
+import { MdLocationOn, MdSearch } from 'react-icons/md'; 
+import Table from './Table'; 
 
 const LocationFile = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -22,11 +22,10 @@ const LocationFile = () => {
         throw new Error('Network response was not ok');
       }
       const data = await response.json();
-      console.log('Full API data:', data); // Log API data received
-
+      console.log('Full API data:', data); 
       if (data.data && Array.isArray(data.data)) {
         setLocations(data.data);
-        setFilteredLocations(data.data); // Initialize with all locations
+        setFilteredLocations(data.data); 
       } else {
         throw new Error('API response data is not in expected format');
       }

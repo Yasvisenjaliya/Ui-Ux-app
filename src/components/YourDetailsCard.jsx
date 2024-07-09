@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card, ConfirmationDialog, Button } from './Card';
-import Select from 'react-select';  // Import Select component from react-select
+import Select from 'react-select';  
 
 const courseOptions = [
   { value: 'course1', label: 'Course 1' },
@@ -23,7 +23,7 @@ const YourDetailsCard = () => {
   };
 
   const handleCourseChange = (selectedOptions) => {
-    setSelectedCourses(selectedOptions.map(option => option.value));  // Extract values from selected options
+    setSelectedCourses(selectedOptions.map(option => option.value));  
   };
 
   const handleSubmit = () => {

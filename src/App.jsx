@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './index.css';
 import Navbar from './components/Navbar';
 import { MdDarkMode, MdOutlineLightMode } from 'react-icons/md';
-import YourDetailsCard from './components/YourDetailsCard';
 import Sidebar from './components/Sidebar';
 
 export default function App() {
