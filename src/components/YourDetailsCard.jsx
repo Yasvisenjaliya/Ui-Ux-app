@@ -15,7 +15,7 @@ const YourDetailsCard = () => {
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleNameChange = (e) => {
-    setName(e.target.value);
+    setName(e.target.value)
   };
 
   const handleAddressChange = (e) => {
@@ -23,7 +23,7 @@ const YourDetailsCard = () => {
   };
 
   const handleCourseChange = (selectedOptions) => {
-    setSelectedCourses(selectedOptions.map(option => option.value));  
+    setSelectedCourses(selectedOptions.map(option => option.value)); 
   };
 
   const handleSubmit = () => {
@@ -50,7 +50,7 @@ const YourDetailsCard = () => {
             <input
               id="name"
               type="text"
-              className="border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 block w-full sm:text-sm  border p-2"
+              className="border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 text-black focus:ring-opacity-50 block w-full sm:text-sm  border p-2"
               placeholder="Enter your name"
               value={name}
               onChange={handleNameChange}
@@ -63,7 +63,7 @@ const YourDetailsCard = () => {
             <input
               id="address"
               type="text"
-              className="border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 block w-full sm:text-sm border p-2"
+              className="border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 text-black focus:ring-opacity-50 block w-full sm:text-sm border p-2"
               placeholder="Enter your address"
               value={address}
               onChange={handleAddressChange}
@@ -79,7 +79,7 @@ const YourDetailsCard = () => {
               options={courseOptions}
               value={courseOptions.filter(option => selectedCourses.includes(option.value))}
               onChange={handleCourseChange}
-              className="border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 block w-full sm:text-sm border p-2"
+              className="border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 text-black focus:ring-opacity-50 block w-full sm:text-sm border p-2"
             />
           </div>
           <Button onClick={handleSubmit}>

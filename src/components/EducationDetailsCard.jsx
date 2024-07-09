@@ -46,7 +46,7 @@ const EducationDetailsCard = () => {
 
   const handleConfirmSubmission = () => {
     setShowConfirmation(false); 
-    console.log(`Submitted: Education Level - ${educationLevel}, School Name - ${schoolName}`);
+    console.log(`Submitted: Education Level - ${educationLevel}, School Name - ${schoolName}, Percentage - ${percentage}`);
   };
 
   return (
@@ -60,7 +60,7 @@ const EducationDetailsCard = () => {
             <input
               id="educationLevel"
               type="text"
-              className="border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 block w-full sm:text-sm border p-2"
+              className="border-gray-300 rounded-md shadow-sm focus:border-blue-500 text-black focus:ring focus:ring-blue-500 focus:ring-opacity-50 block w-full sm:text-sm border p-2"
               placeholder="Enter education level"
               value={educationLevel}
               onChange={handleEducationLevelChange}
@@ -73,7 +73,7 @@ const EducationDetailsCard = () => {
             <input
               id="schoolName"
               type="text"
-              className="border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 block w-full sm:text-sm border p-2"
+              className="border-gray-300 rounded-md shadow-sm focus:border-blue-500 text-black focus:ring focus:ring-blue-500 focus:ring-opacity-50 block w-full sm:text-sm border p-2"
               placeholder="Enter school name"
               value={schoolName}
               onChange={handleSchoolNameChange}
@@ -87,7 +87,7 @@ const EducationDetailsCard = () => {
               <input
                 id="totalMarks"
                 type="number"
-                className="w-full h-14 p-2 border border-gray-300 dark:border-gray-700 rounded"
+                className="w-full h-14 p-2 border text-black border-gray-300 dark:border-gray-700 rounded"
                 placeholder="Enter total marks"
                 value={totalMarks}
                 onChange={handleTotalMarksChange}
@@ -100,7 +100,7 @@ const EducationDetailsCard = () => {
               <input
                 id="obtainedMarks"
                 type="number"
-                className="w-full h-14 p-2 border border-gray-300 dark:border-gray-700 rounded"
+                className="w-full h-14 p-2 border text-black border-gray-300 dark:border-gray-700 rounded"
                 placeholder="Enter obtained marks"
                 value={obtainedMarks}
                 onChange={handleObtainedMarksChange}
@@ -112,7 +112,7 @@ const EducationDetailsCard = () => {
               </label>
               <input
                 type="text"
-                className="w-full h-14 p-2 border border-gray-300 dark:border-gray-700 rounded"
+                className="w-full h-14 p-2 border text-black border-gray-300 dark:border-gray-700 rounded"
                 value={percentage}
                 readOnly
               />

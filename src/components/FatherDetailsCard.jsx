@@ -53,7 +53,7 @@ const FatherDetailsCard = () => {
             <input
               id="fatherName"
               type="text"
-              className="border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 block w-full sm:text-sm border p-2"
+              className="border-gray-300 rounded-md shadow-sm focus:border-blue-500 text-black focus:ring focus:ring-blue-500 focus:ring-opacity-50 block w-full sm:text-sm border p-2"
               placeholder="Enter father's name"
               value={fatherName}
               onChange={handleNameChange}
@@ -66,7 +66,7 @@ const FatherDetailsCard = () => {
           <input
             id="income"
             type="number"
-            className="border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 block w-full sm:text-sm border p-2"
+            className="border-gray-300 rounded-md shadow-sm focus:border-blue-500 text-black focus:ring focus:ring-blue-500 focus:ring-opacity-50 block w-full sm:text-sm border p-2"
             placeholder="Enter father's income"
             value={income}
             onChange={handleIncomeChange}
@@ -82,7 +82,7 @@ const FatherDetailsCard = () => {
               options={occupationOptions}
               value={selectedOccupations}
               onChange={handleOccupationsChange}
-              className="border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 block w-full sm:text-sm border p-2"
+              className="border-gray-300 rounded-md shadow-sm focus:border-blue-500 text-black focus:ring focus:ring-blue-500 focus:ring-opacity-50 block w-full sm:text-sm border p-2"
             />
           </div>
           <Button onClick={handleSubmit}>
