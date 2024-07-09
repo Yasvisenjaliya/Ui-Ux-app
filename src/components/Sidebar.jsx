@@ -19,7 +19,7 @@ const Sidebar = ({ setActiveCard, handleSidebarItemClick, darkMode, toggleDarkMo
   return (
     <div className={`flex h-screen ${darkMode ? 'bg-gray-900' : 'bg-[#ebf1fd]'}`}>
       <div className={`w-64 p-4 ${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
-        <h2 className="text-2xl font-bold mb-8 text-gray-900 dark:text-gray-100">Sidebar Menu</h2>
+        <h2 className="text-2xl font-bold mb-8 text-gray-900 dark:text-gray-100">Menu</h2>
         <nav>
           <ul>
             <li>

@@ -29,13 +29,8 @@ export default function App() {
         </div>
         <div className='flex'>
           <div>
-            <h1 className="text-7xl text-blue-600 dark:text-blue-400 font-bold underline">
-              Demaze
-            </h1>
-          </div>
-          <div>
             <button
-              className="p-2 m-4 ml-[50rem]  bg-gray-300 dark:bg-gray-700 text-black dark:text-white rounded "
+              className="p-2 m-4 ml-[70rem]  bg-gray-300 dark:bg-gray-700 text-black dark:text-white rounded "
               onClick={toggleDarkMode}
             >
               {darkMode ? (
