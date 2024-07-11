@@ -29,11 +29,11 @@ const DragDropList = () => {
   };
 
   return (
-    <div className="fixed w-[68%] top-24 left-[22.9%] right-[9%] bg-[#b8e8f5] dark:bg-gray-800 rounded-2xl">
+    <div className="fixed w-[68%] top-24 left-[22.9%] right-[9%] bg-back dark:bg-gray-800 rounded-2xl">
       <div className=''>
         <table className="min-w-full">
           <thead>
-            <tr className=" text-[16px] text-gray-700 dark:text-gray-300 bg-[#8cceee] dark:bg-gray-800 ">
+            <tr className=" text-[16px] dark:text-label bg-nav dark:bg-gray-800 ">
               <th className="p-3 border-b rounded-tl-2xl border-slate-400">Action</th>
               <th className="p-3 border-b border-slate-400">no</th>
               <th className="p-3 border-b border-slate-400">ID</th>
@@ -44,7 +44,7 @@ const DragDropList = () => {
           <tbody>
             {people.map((person, index) => (
               <tr
-                className="text-[16px] text-gray-700 dark:text-gray-400"
+                className="text-[16px]  dark:text-gray-400"
                 key={index}
                 draggable={dragging}
                 onDragStart={() => onDragStart(index)}

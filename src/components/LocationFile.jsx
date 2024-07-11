@@ -1,33 +1,36 @@
-import React, { useState, useEffect } from 'react';
-import { SearchInput, LocationSelect, ActiveSwitch, fetchLocations, filterLocations } from './CommonComponents';
+import React from 'react';
+import { SearchInput, LocationSelect, ActiveSwitch } from './CommonComponents';
 import Table from './Table';
+import Fetch from '../hooks/Fetch';
 
 const LocationFile = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [locations, setLocations] = useState([]);
-  const [filteredLocations, setFilteredLocations] = useState([]);
-  const [showActiveOnly, setShowActiveOnly] = useState(false);
-  const [locationSearchTerm, setLocationSearchTerm] = useState('');
-
-  useEffect(() => {
-    fetchLocations(setLocations, setFilteredLocations);
-  }, []);
+  const {
+    filteredData,
+    searchText,
+    setSearchText,
+    isSwitchActive,
+    setIsSwitchActive,
+    selectedOptions,
+    setSelectedOptions,
+    tableData,
+    setFilteredData,
+  } = Fetch('https://dev.carzup.in/api/pricelist/test-mock');
 
   const handleSearchChange = (e) => {
-    const searchTerm = e.target.value.toLowerCase();
-    setSearchTerm(searchTerm);
-    setFilteredLocations(filterLocations(locations, searchTerm, showActiveOnly, locationSearchTerm));
+    setSearchText(e.target.value.toLowerCase());
   };
 
   const handleLocationSearchChange = (e) => {
-    const locationSearchTerm = e.target.value.toLowerCase();
-    setLocationSearchTerm(locationSearchTerm);
-    setFilteredLocations(filterLocations(locations, searchTerm, showActiveOnly, locationSearchTerm));
+    const value = e.target.value.toLowerCase();
+    setSelectedOptions(value);
+
+    if (value === 'all locations') {
+      setFilteredData(tableData);
+    }
   };
 
   const handleActiveSwitchChange = (checked) => {
-    setShowActiveOnly(checked);
-    setFilteredLocations(filterLocations(locations, searchTerm, showActiveOnly, locationSearchTerm));
+    setIsSwitchActive(checked);
   };
 
   return (
@@ -36,23 +39,23 @@ const LocationFile = () => {
         <div className="flex mb-4 gap-10">
           <SearchInput
             id="search"
-            value={searchTerm}
+            value={searchText}
             onChange={handleSearchChange}
             placeholder="Search by name..."
           />
           <LocationSelect
             id="location"
-            value={locationSearchTerm}
+            value={selectedOptions}
             onChange={handleLocationSearchChange}
-            options={Array.from(new Set(locations.map((location) => location.location)))}
+            options={[ ...Array.from(new Set(tableData.map((location) => location.location.toLowerCase())))]}
           />
           <ActiveSwitch
-            checked={showActiveOnly}
+            checked={isSwitchActive}
             onChange={handleActiveSwitchChange}
           />
         </div>
-        <div className="max-h-[450px] overflow-x-auto mt-8 ">
-          <Table data={filteredLocations} />
+        <div className="max-h-[450px] overflow-x-auto mt-8">
+          <Table data={filteredData} />
         </div>
       </div>
     </div>

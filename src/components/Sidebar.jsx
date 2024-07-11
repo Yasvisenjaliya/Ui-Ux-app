@@ -24,7 +24,7 @@ const Sidebar = ({ setActiveCard, handleSidebarItemClick, darkMode, toggleDarkMo
           <ul>
             <li>
               <button
-                className={`w-full text-left px-4 py-2 rounded-lg ${activeSection === 'ui-ux' ? 'bg-blue-500 text-white' : 'text-gray-900 dark:text-gray-100'}`}
+                className={`w-full text-left px-4 py-2 rounded-lg ${activeSection === 'ui-ux' ? 'bg-header_color text-primary' : 'text-gray-900 dark:text-gray-100'}`}
                 onClick={(e) => handleClick(e, 'ui-ux')}
               >
                 UI-UX
@@ -32,7 +32,7 @@ const Sidebar = ({ setActiveCard, handleSidebarItemClick, darkMode, toggleDarkMo
             </li>
             <li>
               <button
-                className={`w-full text-left px-4 py-2 rounded-lg ${activeSection === 'location' ? 'bg-blue-500 text-white' : 'text-gray-900 dark:text-gray-100'}`}
+                className={`w-full text-left px-4 py-2 rounded-lg ${activeSection === 'location' ? 'bg-header_color text-primary' : 'text-gray-900 dark:text-gray-100'}`}
                 onClick={(e) => handleClick(e, 'location')}
               >
                 Location
@@ -40,7 +40,7 @@ const Sidebar = ({ setActiveCard, handleSidebarItemClick, darkMode, toggleDarkMo
             </li>
             <li>
               <button
-                className={`w-full text-left px-4 py-2 rounded-lg ${activeSection === 'list' ? 'bg-blue-500 text-white' : 'text-gray-900 dark:text-gray-100'}`}
+                className={`w-full text-left px-4 py-2 rounded-lg ${activeSection === 'list' ? 'bg-header_color text-primary' : 'text-gray-900 dark:text-gray-100'}`}
                 onClick={(e) => handleClick(e, 'list')}
               >
                 List

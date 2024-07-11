@@ -44,33 +44,33 @@ const YourDetailsCard = () => {
       <Card title="Your Details ">
         <div className="w-[48rem] ml-5 ">
           <div className="mb-4">
-            <label className="block text-gray-700 dark:text-slate-200 text-sm font-bold mb-2" htmlFor="name">
+            <label className="block  dark:text-label text-sm font-bold mb-2" htmlFor="name">
               Name
             </label>
             <input
               id="name"
               type="text"
-              className="border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 text-black focus:ring-opacity-50 block w-full sm:text-sm  border p-2"
+              className="border-border rounded-md shadow-sm  focus:ring focus:ring-ring text-inp focus:ring-opacity-50 block w-full sm:text-sm  border p-2"
               placeholder="Enter your name"
               value={name}
               onChange={handleNameChange}
             />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700 dark:text-slate-200 text-sm font-bold mb-2" htmlFor="address">
+            <label className="block  dark:text-label text-sm font-bold mb-2" htmlFor="address">
               Address
             </label>
             <input
               id="address"
               type="text"
-              className="border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 text-black focus:ring-opacity-50 block w-full sm:text-sm border p-2"
+              className="border-border rounded-md shadow-sm focus: focus:ring focus:ring-ring text-inp focus:ring-opacity-50 block w-full sm:text-sm border p-2"
               placeholder="Enter your address"
               value={address}
               onChange={handleAddressChange}
             />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700 dark:text-slate-200 text-sm font-bold mb-2" htmlFor="courses">
+            <label className="block dark:text-label text-sm font-bold mb-2" htmlFor="courses">
               Courses
             </label>
             <Select
@@ -79,7 +79,7 @@ const YourDetailsCard = () => {
               options={courseOptions}
               value={courseOptions.filter(option => selectedCourses.includes(option.value))}
               onChange={handleCourseChange}
-              className="border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 text-black focus:ring-opacity-50 block w-full sm:text-sm border p-2"
+              className="border-border rounded-md shadow-sm  focus:ring focus:ring-ring text-inp focus:ring-opacity-50 block w-full sm:text-sm border p-2"
             />
           </div>
           <Button onClick={handleSubmit}>
@@ -95,9 +95,9 @@ const YourDetailsCard = () => {
           onConfirm={handleConfirm}
           title="Confirm Submission"
         >
-          <p className="dark:text-gray-300 mb-2"><strong>Name:</strong> {name}</p>
-          <p className="dark:text-gray-300 mb-2"><strong>Address:</strong> {address}</p>
-          <p className="dark:text-gray-300 mb-2"><strong>Courses:</strong> {selectedCourses.join(', ')}</p>
+          <p className="dark:text-label mb-2"><strong>Name:</strong> {name}</p>
+          <p className="dark:text-label mb-2"><strong>Address:</strong> {address}</p>
+          <p className="dark:text-label mb-2"><strong>Courses:</strong> {selectedCourses.join(', ')}</p>
         </ConfirmationDialog>
       )}
     </>

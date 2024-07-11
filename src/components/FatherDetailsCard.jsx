@@ -47,33 +47,33 @@ const FatherDetailsCard = () => {
       <Card title="Father's Details">
         <div className="w-[48rem] ml-5">
           <div className="mb-4">
-            <label className="block text-gray-700 dark:text-slate-200 text-sm font-bold mb-2" htmlFor="fatherName">
+            <label className="block dark:text-label text-sm font-bold mb-2" htmlFor="fatherName">
               Father's Name
             </label>
             <input
               id="fatherName"
               type="text"
-              className="border-gray-300 rounded-md shadow-sm focus:border-blue-500 text-black focus:ring focus:ring-blue-500 focus:ring-opacity-50 block w-full sm:text-sm border p-2"
+              className="border-border rounded-md shadow-sm  text-inp focus:ring focus:ring-ring focus:ring-opacity-50 block w-full sm:text-sm border p-2"
               placeholder="Enter father's name"
               value={fatherName}
               onChange={handleNameChange}
             />
           </div>
           <div className="mb-4">
-          <label className="block text-gray-700 dark:text-slate-200 text-sm font-bold mb-2" htmlFor="income">
+          <label className="block  dark:text-label text-sm font-bold mb-2" htmlFor="income">
             Income
           </label>
           <input
             id="income"
             type="number"
-            className="border-gray-300 rounded-md shadow-sm focus:border-blue-500 text-black focus:ring focus:ring-blue-500 focus:ring-opacity-50 block w-full sm:text-sm border p-2"
+            className="border-border rounded-md shadow-sm  text-inp focus:ring focus:ring-ring focus:ring-opacity-50 block w-full sm:text-sm border p-2"
             placeholder="Enter father's income"
             value={income}
             onChange={handleIncomeChange}
           />
         </div>
           <div className="mb-4">
-            <label className="block text-gray-700 dark:text-slate-200 text-sm font-bold mb-2" htmlFor="occupations">
+            <label className="block  dark:text-label text-sm font-bold mb-2" htmlFor="occupations">
               Occupations
             </label>
             <Select
@@ -82,7 +82,7 @@ const FatherDetailsCard = () => {
               options={occupationOptions}
               value={selectedOccupations}
               onChange={handleOccupationsChange}
-              className="border-gray-300 rounded-md shadow-sm focus:border-blue-500 text-black focus:ring focus:ring-blue-500 focus:ring-opacity-50 block w-full sm:text-sm border p-2"
+              className="border-border rounded-md shadow-sm focus: text-inp focus:ring focus:ring-ring focus:ring-opacity-50 block w-full sm:text-sm border p-2"
             />
           </div>
           <Button onClick={handleSubmit}>
@@ -98,9 +98,9 @@ const FatherDetailsCard = () => {
           onConfirm={handleConfirm}
           title="Confirm Submission"
         >
-          <p className="dark:text-gray-300 mb-2"><strong>Father's Name:</strong> {fatherName}</p>
-          <p className="dark:text-gray-300 mb-2"><strong>Income:</strong> {income}</p>
-          <p className="dark:text-gray-300 mb-2"><strong>Occupations:</strong> {selectedOccupations.join(', ')}</p>
+          <p className="dark:text-label mb-2"><strong>Father's Name:</strong> {fatherName}</p>
+          <p className="dark:text-label mb-2"><strong>Income:</strong> {income}</p>
+          <p className="dark:text-label mb-2"><strong>Occupations:</strong> {selectedOccupations.join(', ')}</p>
         </ConfirmationDialog>
       )}
     </>

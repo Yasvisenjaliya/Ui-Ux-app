@@ -22,7 +22,7 @@ export default function App() {
   };
 
   return (
-    <div className={`min-h-screen ${darkMode ? 'bg-gray-900' : 'bg-[#ebf1fd] dark:bg-gray-900'}`}>
+    <div className={`min-h-screen ${darkMode ? 'bg-dark' : 'bg-[#ebf1fd] dark:bg-gray-900'}`}>
       <div className='flex'>
         <div>
           <Sidebar setActiveCard={setActiveCard} handleSidebarItemClick={handleSidebarItemClick} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
@@ -30,7 +30,7 @@ export default function App() {
         <div className='flex'>
           <div>
             <button
-              className="p-2 m-4 ml-[70rem]  bg-gray-300 dark:bg-gray-700 text-black dark:text-white rounded "
+              className="p-2 m-4 ml-[70rem]  bg-gray-300 dark:bg-dark_card text-inp dark:text-primary rounded "
               onClick={toggleDarkMode}
             >
               {darkMode ? (

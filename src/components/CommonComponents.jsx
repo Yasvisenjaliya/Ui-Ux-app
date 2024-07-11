@@ -12,7 +12,7 @@ export const DragHandle = ({ onMouseDown, onMouseUp }) => (
 
 export const ExportButton = ({ onClick }) => (
   <button
-    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-3xl"
+    className="bg-header_color hover:bg-blue-700 text-primary font-bold py-2 px-4 rounded-2xl"
     onClick={onClick}
   >
     Export
@@ -21,13 +21,13 @@ export const ExportButton = ({ onClick }) => (
 
 export const SearchInput = ({ id, value, onChange, placeholder }) => (
   <div className="relative flex-auto">
-    <label className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" htmlFor={id}>
+    <label className="block dark:text-label text-sm font-bold mb-2" htmlFor={id}>
       <MdSearch className="absolute left-2 top-5 text-gray-400" size={20} />
     </label>
     <input
       id={id}
       type="text"
-      className="w-full p-2 pl-10 border border-gray-300 dark:border-gray-700 rounded"
+      className="w-full p-2 pl-10 border border-border dark:border-dark_border rounded"
       placeholder={placeholder}
       value={value}
       onChange={onChange}
@@ -37,12 +37,12 @@ export const SearchInput = ({ id, value, onChange, placeholder }) => (
 
 export const LocationSelect = ({ id, value, onChange, options }) => (
   <div className="relative">
-    <label className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" htmlFor={id}>
+    <label className="block  dark:text-label text-sm font-bold mb-2" htmlFor={id}>
       <MdLocationOn className="absolute left-2 top-5 text-gray-400" size={20} />
     </label>
     <select
       id={id}
-      className="w-48 p-2 pl-8 border border-gray-300 dark:border-gray-700 rounded"
+      className="w-48 p-2 pl-8 border border-border dark:border-dark_border rounded"
       value={value}
       onChange={onChange}
     >
@@ -94,31 +94,35 @@ export const handleSort = (people, dragPerson, draggedOverPerson) => {
   return peopleClone;
 };
 
+// Sample fetchLocations and filterLocations functions
 export const fetchLocations = async (setLocations, setFilteredLocations) => {
   try {
-    const response = await fetch('https://dev.carzup.in/api/pricelist/test-mock');
+    const response = await fetch('https://dev.carzup.in/api/pricelist/test-mock'); // Use your actual API URL
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      throw new Error('Error while fetching data');
     }
     const data = await response.json();
-    console.log('Full API data:', data); 
-    if (data.data && Array.isArray(data.data)) {
-      setLocations(data.data);
-      setFilteredLocations(data.data); 
-    } else {
-      throw new Error('API response data is not in expected format');
-    }
+    setLocations(data.data);
+    setFilteredLocations(data.data);
   } catch (error) {
-    console.error('Error fetching data:', error);
+    console.error('Error fetching data', error);
   }
 };
 
 export const filterLocations = (locations, searchTerm, showActiveOnly, locationSearchTerm) => {
-  return locations.filter((location) => {
-    const matchesSearchTerm = location.name.toLowerCase().includes(searchTerm);
-    const matchesLocationSearch = location.location.toLowerCase().includes(locationSearchTerm);
-    const matchesActiveStatus = !showActiveOnly || location.active;
+  let filtered = locations.filter((location) =>
+    location.name.toLowerCase().includes(searchTerm)
+  );
 
-    return matchesSearchTerm && matchesLocationSearch && matchesActiveStatus;
-  });
+  if (locationSearchTerm) {
+    filtered = filtered.filter((location) =>
+      location.location.toLowerCase().includes(locationSearchTerm)
+    );
+  }
+
+  if (showActiveOnly) {
+    filtered = filtered.filter((location) => location.active);
+  }
+
+  return filtered;
 };
